@@ -1,4 +1,4 @@
-name: End-to-end tests
+name: All The Test Cases End-to-end tests
 on: push
 jobs:
   cypress-run:
@@ -8,6 +8,6 @@ jobs:
         uses: actions/checkout@v4
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
-      #Git Hub action
+      # When we have to run all the test cases
       - name: Cypress run
         uses: cypress-io/github-action@v6

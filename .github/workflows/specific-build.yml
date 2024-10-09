@@ -12,4 +12,5 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v6
         # When we have to run only specific test cases
-        with: command:npm run test:addToCart
+        with:
+        command: npm run test:addToCart
