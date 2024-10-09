@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
+      #job-1
       # Install npm dependencies, cache them correctly
       # and run all Cypress tests
 
@@ -14,7 +14,13 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           command: npm run test:addToCart
-
+      # For generating HTML Reports
+      - name: Mochawesome HTML Test Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mochawesome HTML Report - addToCart
+          path: cypress/reports/html
+      #job-2
   registerFlow-run:
     runs-on: ubuntu-22.04
     steps:
@@ -28,3 +34,9 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           command: npm run test:registerFlow
+      # For generating HTML Reports
+      - name: Mochawesome HTML Test Reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mochawesome HTML Report - Register Flow
+          path: cypress/reports/html
