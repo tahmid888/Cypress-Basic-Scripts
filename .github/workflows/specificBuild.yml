@@ -16,6 +16,7 @@ jobs:
           command: npm run test:addToCart
       # For generating HTML Reports
       - name: Mochawesome HTML Test Reports
+        if: always() # Test reports will run even it test case is failed
         uses: actions/upload-artifact@v4
         with:
           name: Mochawesome HTML Report
