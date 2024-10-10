@@ -11,3 +11,13 @@ jobs:
       # When we have to run all the test cases
       - name: Cypress run
         uses: cypress-io/github-action@v6
+      # Slack Integration
+
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_MESSAGE: "Test Automation Slack Report https://github.com/tahmid888/Cypress-Basic-Scripts/actions/runs/${{github.run_id}}"
+          SLACK_TITLE: Cypress Slack Title
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }} # Saem name as secret and variables name
